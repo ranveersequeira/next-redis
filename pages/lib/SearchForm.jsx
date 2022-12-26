@@ -17,11 +17,23 @@ export default function CarForm() {
 
     return (
         <div>
-            <input onChange={search} type="text"/>
-            <ul>
+            <input onChange={search} type="text"
+                placeholder='search cars..'
+                className='form-control'
+            />
+            <ul className='list-group'>
                 {hits.map((hit) => (
-                    <li key={hit.entityId}>{hit.make} {hit.model} </li>
+                    <li key={hit.entityId} className="list-group-item d-flex justify-content-between align-items-start">
+                <img width="50px" src={hit.image} />
+                <div className='ms-2 me-auto'>
+                    <div className='fw-bold'>
+                        {hit.make} {hit.model}
+                    </div>
+                    {hit.description}
+                </div>
+                </li>
                 ))}
+
             </ul>
         </div>
     )

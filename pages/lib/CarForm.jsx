@@ -19,12 +19,19 @@ export default function CarForm(){
 
     return (
         <form onSubmit={handleSubmit}>
-            <input name="make" type="text"/>
-            <input name="model" type="text"/>
-            <input name="image" type="text"/>
-            <textarea name="description" type="text"/>
+            <label htmlFor="make" className="form-label">Make</label>
+            <input name="make" type="text" className="form-control"/>
+            <label htmlFor="model" className="form-label">Model</label>
 
-            <button type="submit">Create Car</button>
+            <input name="model" type="text" className="form-control"/>
+            <label htmlFor="image" className="form-label">Image</label>
+
+            <input name="image" type="text" className="form-control"/>
+            <label htmlFor="description" className="form-label">Description</label>
+
+            <textarea name="description" type="text" className="form-control"/>
+
+            <button type="submit" className="btn btn-primary">Create Car</button>
         </form>
     )
 }
